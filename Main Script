@@ -1,0 +1,20 @@
+#%matplotlib inline
+import matplotlib.pyplot as plt
+import numpy as np
+
+print("Velocity of A: ")
+VelocityA = int(input())
+print("Velocity of B: ")
+VelocityB = int(input())
+
+x = np.arange(100)
+yA = np.polyval(np.poly1d([VelocityA, 0]),x)
+yB = np.polyval(np.poly1d([VelocityB, 0]),x)
+
+plt.plot(x,yA,'b-',x,yB,'r-')
+plt.xlabel("Time (s)")
+plt.ylabel("Displacmenet(m)")
+
+plt.legend(["Tortoise A", "Tortoise B"])
+plt.title("Tortoise Race")
+plt.grid(1)
